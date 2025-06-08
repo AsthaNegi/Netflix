@@ -1,0 +1,24 @@
+{
+  "name": "netflixgpt",
+  "version": "1.0.0",
+  "description": "application clone of netflux",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Astha Negi",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.8"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
