@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Body from "./components/Body";
 
 const heading = React.createElement("h1",{},"Hello React");
 
+
+
 const App = () =>{
     return(
-      <div className="text-3xl">
-         App component
+      <div className="">
+         <Body/>
       </div>
     );
 }

@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "clean": "powershell.exe Remove-Item -Recurse -Force .parcel-cache, dist"
   },
   "author": "Astha Negi",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "@tailwindcss/postcss": "^4.1.8",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^6.30.1",
     "tailwindcss": "^4.1.8"
   },
   "browserslist": [
