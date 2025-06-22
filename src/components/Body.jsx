@@ -1,10 +1,15 @@
+
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import Login from "./Login";
 import Browse from "./Browse";
+import Error from "./Error";
+import { useDispatch } from "react-redux";
 
 
 
 const Body = () =>{
+
+    const dispatch = useDispatch();
 
     const appRouter=createBrowserRouter([
         {
@@ -14,6 +19,11 @@ const Body = () =>{
         {
             path : "/browse",
             element:<Browse/>
+        },
+        {
+            path:"/error",
+            element:<Error/>
+
         }
     ]
     );
