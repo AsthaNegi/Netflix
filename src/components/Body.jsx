@@ -25,8 +25,11 @@ const Body = () =>{
             element:<Error/>
 
         }
-    ]
-    );
+      ],{
+     future: {
+        v7_startTransition: true, // ✅ opt in to new behavior
+            },
+     });
 
 
     return(

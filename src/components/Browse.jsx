@@ -1,14 +1,36 @@
+import { API_OPTIONS } from "../utils/constants";
 import Header from "./Header";
+import { useEffect } from "react";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRatedMovies from "../hooks/useTopRatedMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
 
 
-const Browse = () =>{
+
+const Browse = () =>{   
+    // calling teh custom hook to fetch NowPlayingMovies  and store them in redux store   
+        useNowPlayingMovies(); 
+        usePopularMovies();
+        useTopRatedMovies();
+        useUpcomingMovies();
+
     return(
         <div>
              <Header/>
-             <div>
-                <Header/>
-                {/* <img src="https://assets.nflxext.com/ffe/siteui/vlv3/6863f6e8-d419-414d-b5b9-7ef657e67ce4/web/IN-en-20250602-TRIFECTA-perspective_27a3fdfa-126f-4148-b153-55d60b51be6a_large.jpg" alt="" /> */}
-             </div>
+             <MainContainer/>
+             <SecondaryContainer/>
+             {/*
+                MainContainer
+                   - videoBackground
+                   -videoTitle
+                secondaryContainer
+                    - MovieList *n 
+                       - cards *n  
+             */}
+             
         </div>
     );
 }
