@@ -44,6 +44,7 @@
 -- Build GPT search button 
 -- build GPT search component 
 -- on clicking GPT search button , toggle between <Browse/> and <GPTSearch >
+-- stored the toggle logic on redux store 
 -- <GptSearch/> has <GptSearchBar/> and <GptMoviesSuggestions/>
 -- styled the <GptSearchBar/> and provided <GptSearch/> with background image and set the -z-10 index so all other components are redered above background image 
 -- push all hard coded constants in constants 
