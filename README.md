@@ -41,6 +41,13 @@
 -- Also updated src/utils/firebase.js to load all Firebase config values (API key, project ID, etc.) from environment variables defined in the .env file.
 
 
+-- Build GPT search button 
+-- build GPT search component 
+-- on clicking GPT search button , toggle between <Browse/> and <GPTSearch >
+-- <GptSearch/> has <GptSearchBar/> and <GptMoviesSuggestions/>
+-- styled the <GptSearchBar/> and provided <GptSearch/> with background image and set the -z-10 index so all other components are redered above background image 
+-- push all hard coded constants in constants 
+
 
 
 -Login/signup

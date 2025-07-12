@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import VideoTitle from "./VideoTitle";
 import VideoBackground from "./VideoBackground";
+import MainMoviePoster from "./MainMoviePoster";
 
 const MainContainer = () =>{
 
@@ -9,7 +10,7 @@ const MainContainer = () =>{
 
     const mainMovie = movies[0];
     console.log("mainmovie :",mainMovie);
-    const {id, original_title,overview} = mainMovie;
+    const {id, original_title,overview,poster_path} = mainMovie;
 
 
     return(

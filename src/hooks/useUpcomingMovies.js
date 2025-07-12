@@ -6,17 +6,24 @@ import { addUpcomingMovies } from "../utils/moviesSlice";
 // fetching and storing upcoming moves in redux store 
 const useUpcomingMovies = () =>{
 
-    const dispatch = useDispatch();
 
-    const getUpcomingMovies = () =>{
+    const dispatch = useDispatch();  
+
+    const getUpcomingMovies = async() =>{
         const url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
        
-        fetch(url,API_OPTIONS)
-        .then(data=>data.json())
-        .then(movies=>dispatch(addUpcomingMovies(movies)))
-        .catch((err)=>console.log(err))
+       try{
 
- 
+         const data = await fetch(url,API_OPTIONS);
+         console.log("U data",data);
+         const movies= await data.json();
+         console.log("U movies:",movies);
+         dispatch(addUpcomingMovies(movies));
+
+       }
+       catch(err){
+        console.log(err);
+       } 
     }
 
     useEffect(()=>{
@@ -26,6 +33,14 @@ const useUpcomingMovies = () =>{
 }
 
 export default useUpcomingMovies;
+
+
+
+
+// fetch(url, options)
+//   .then(res => res.json())
+//   .then(json => console.log(json))
+//   .catch(err => console.error(err));
 
 
  

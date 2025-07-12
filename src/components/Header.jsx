@@ -7,6 +7,7 @@ import {addUser,removeUser} from "../utils/userSlice";
 import {  onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { LOGO } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 
 
@@ -15,8 +16,8 @@ const Header = () =>{
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector(store=> store.user);
-
-    
+    const showGptSearch = useSelector(store=>store.gpt.showGptSearch);
+     
 
 
     // Header is present in every component so auth state will be checked with each component rendering 
@@ -56,6 +57,11 @@ const Header = () =>{
             });
     }
 
+    const handleGptSearchClick=() =>{
+      // changing value of showGptSearch in redux store
+      dispatch(toggleGptSearchView());
+    }
+
     // if(!user) return null;
     return (     
       <div className="fixed  top-0 left-0 z-10 w-full px-8 py-2 bg-gradient-to-b from-black flex justify-between items-center">
@@ -66,6 +72,7 @@ const Header = () =>{
         />
         {user&&
           <div className="flex p-2 items-center">
+              <button className="bg-red-700 w-30 hover:cursor-pointer hover:hover:bg-red-500 text-white font-bold p-2 rounded-md m-3 " onClick={handleGptSearchClick}>{showGptSearch?"Home":"GPT Search"}</button>
               <img
                 className="w-10 h-10 m-2 rounded"
                 src={user?.photoURL}

@@ -8,7 +8,7 @@ const useMovieTrailer = (movieId) =>{
     
     const dispatch = useDispatch();
 
-    
+
     // fetching the trailer video and updating trailer video on the redux store 
     const getMovieVideos = async() =>{
         try{

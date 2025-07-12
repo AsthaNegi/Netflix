@@ -7,7 +7,7 @@ import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import {  updateProfile } from "firebase/auth";
 import { addUser } from "../utils/userSlice.js";
-import { defaultUserProfile } from "../utils/constants.js";
+import { BG_URL, defaultUserProfile } from "../utils/constants.js";
 
 
 const Login = () =>{
@@ -95,7 +95,7 @@ const Login = () =>{
         <div>
             <Header/>
             <div className="absolute">
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/6863f6e8-d419-414d-b5b9-7ef657e67ce4/web/IN-en-20250602-TRIFECTA-perspective_27a3fdfa-126f-4148-b153-55d60b51be6a_large.jpg" alt="" />
+                <img src={BG_URL} alt="" />
             </div>
             <form onSubmit={(e)=>{e.preventDefault();}} className="bg-black/80 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/12   text-white p-4">
                 <h1 className="font-bold text-3xl py-4">{isSignInForm?"Sign In":"Sign up"}</h1>
