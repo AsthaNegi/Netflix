@@ -5,7 +5,6 @@ import { useEffect } from "react";
 const VideoBackground = ({movieId}) =>{
 
     const trailerVideo =useSelector(store=>store.movies?.trailerVideo);
-    // console.log("trailerVideo key :",trailerVideo);
     // fetching the movie trailer data 
    
     useMovieTrailer(movieId);

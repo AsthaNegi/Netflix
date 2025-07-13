@@ -8,6 +8,8 @@ import {  onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { LOGO } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
 
 
 
@@ -62,16 +64,26 @@ const Header = () =>{
       dispatch(toggleGptSearchView());
     }
 
+    const handleLanguageChange = (e) =>{
+  
+      dispatch(changeLanguage(e.target.value));
+    }
+
     // if(!user) return null;
     return (     
       <div className="fixed  top-0 left-0 z-10 w-full px-8 py-2 bg-gradient-to-b from-black flex justify-between items-center">
         <img
           className="w-56"
-          src={LOGO}
+          src={LOGO} 
           alt="Netflix Logo"
         />
         {user&&
           <div className="flex p-2 items-center">
+              {showGptSearch&&(
+                <select className="bg-gray-900 text-white m-2 p-2 rounded-sm" onClick={handleLanguageChange}>
+                   {SUPPORTED_LANGUAGES.map(lang=><option key={lang.identifier}value={lang.identifier}>{lang.name}</option>)}
+                </select>
+              )}
               <button className="bg-red-700 w-30 hover:cursor-pointer hover:hover:bg-red-500 text-white font-bold p-2 rounded-md m-3 " onClick={handleGptSearchClick}>{showGptSearch?"Home":"GPT Search"}</button>
               <img
                 className="w-10 h-10 m-2 rounded"

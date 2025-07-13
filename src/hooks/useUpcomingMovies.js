@@ -15,9 +15,8 @@ const useUpcomingMovies = () =>{
        try{
 
          const data = await fetch(url,API_OPTIONS);
-         console.log("U data",data);
+
          const movies= await data.json();
-         console.log("U movies:",movies);
          dispatch(addUpcomingMovies(movies));
 
        }

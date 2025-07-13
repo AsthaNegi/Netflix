@@ -35,7 +35,6 @@ const Login = () =>{
         .then((userCredential) => {
            // Signed up 
             const user = userCredential.user;
-            console.log("Signed up user : ",user);// new user is created
             
                 // // after user is signed up , update user details 
                  updateProfile(user, {
@@ -73,7 +72,6 @@ const Login = () =>{
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            console.log("Signed in user :",user);
             
         })
         .catch((error) => {

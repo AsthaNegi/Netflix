@@ -48,6 +48,8 @@
 -- <GptSearch/> has <GptSearchBar/> and <GptMoviesSuggestions/>
 -- styled the <GptSearchBar/> and provided <GptSearch/> with background image and set the -z-10 index so all other components are redered above background image 
 -- push all hard coded constants in constants 
+-- added multi languaggae feature in our app 
+
 
 
 

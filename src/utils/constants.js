@@ -8,7 +8,7 @@ export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: `Bearer ${process.env.BEARER_TOKEN}`, // ✅ always dynamic
+    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZDNhZGM2NmFkZmM2OTQ4ZTA3MGFkYzlhMmFkY2IyNiIsIm5iZiI6MTc1MDcyMjk0Ny4xNzkwMDAxLCJzdWIiOiI2ODU5ZTk4M2M0NTJlNDljZmY3OTZhOGIiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.42MLlk841PJOCY7FDofqQWtb375Y3mUECA-UFg4GTJQ`, // ✅ always dynamic
   },
 };
 
@@ -16,3 +16,6 @@ export const API_OPTIONS = {
 export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500/";
 
 export const BG_URL ="https://assets.nflxext.com/ffe/siteui/vlv3/6863f6e8-d419-414d-b5b9-7ef657e67ce4/web/IN-en-20250602-TRIFECTA-perspective_27a3fdfa-126f-4148-b153-55d60b51be6a_large.jpg";
+
+export const SUPPORTED_LANGUAGES=[{name:"English",identifier:"eng"},{name:"Hindi",identifier:"hindi"},{name:"Japanese",identifier:"jap"}];
+

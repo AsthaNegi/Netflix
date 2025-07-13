@@ -11,7 +11,7 @@ const useMovieTrailer = (movieId) =>{
 
     // fetching the trailer video and updating trailer video on the redux store 
     const getMovieVideos = async() =>{
-        try{
+        try{         
 
            const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`;
             const data=await fetch(url,API_OPTIONS);
